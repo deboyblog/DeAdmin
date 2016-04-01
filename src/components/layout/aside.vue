@@ -3,9 +3,9 @@
 		<!-- sidebar: style can be found in sidebar.less -->
 		<section class="sidebar" style="height: auto;">
 			<!-- search form -->
-			<form action="#" method="get" class="sidebar-form">
+			<form class="sidebar-form">
 				<div class="input-group">
-					<input type="text" name="q" class="form-control" placeholder="Search...">
+					<input type="text" name="q" class="form-control" v-model='menuFilter' placeholder="根据系统名称搜索">
 					<span class="input-group-btn">
 						<button type="submit" name="search" id="search-btn" class="btn btn-flat"> <i class="fa fa-search"></i>
 						</button>
@@ -16,42 +16,24 @@
 			<!-- sidebar menu: : style can be found in sidebar.less -->
 			<ul class="sidebar-menu">
 				<li class="header">DeAdmin-系统后台操作面板</li>
-				<li class="treeview">
-					<a href="#">
+				<li v-for="item in list | filterBy menuFilter in 'name'" :class='{treeview:item.child,active:$route.path.indexOf(item.path)>=0}'>
+					<a v-link="{path:item.path}" v-if='!item.child'>
+						<i class="fa fa-th"></i>
+						<span>{{item.name}}</span>
+					</a>
+					<a v-if='item.tree'>
 						<i class="fa fa-dashboard"></i>
-						<span>Dashboard</span>
+						<span>{{item.name}}</span>
 						<i class="fa fa-angle-left pull-right"></i>
 					</a>
-					<ul class="treeview-menu" style="display: none;">
-						<li class="active">
-							<a href="index2.html">
+					<ul class="treeview-menu" v-if='item.tree' v-show='$route.path.indexOf(item.path)>=0' style="display: none;">
+						<li v-for='subItem in item.child'>
+							<a href="#" v-link="{path:subItem.path}">
 								<i class="fa fa-circle-o"></i>
-								Dashboard v2
+								{{subItem.name}}
 							</a>
 						</li>
 					</ul>
-				</li>
-				<li class="treeview">
-					<a href="#">
-						<i class="fa fa-files-o"></i>
-						<span>Layout Options</span>
-						<span class="label label-primary pull-right">4</span>
-					</a>
-					<ul class="treeview-menu">
-						<li>
-							<a href="pages/layout/top-nav.html">
-								<i class="fa fa-circle-o"></i>
-								Top Navigation
-							</a>
-						</li>
-					</ul>
-				</li>
-				<li>
-					<a href="pages/widgets.html">
-						<i class="fa fa-th"></i>
-						<span>Widgets</span>
-						<small class="label pull-right bg-green">new</small>
-					</a>
 				</li>
 			</ul>
 		</section>
@@ -63,11 +45,9 @@
 export default {
   data () {
     return {
-      list: [
-			{name: 'menu', path: '/from'}
-      ]
+      menuFilter: '',
+      list: require('../../../static/aside.config.js')
     }
   }
 }
 </script>
-<style lang='less'></style>

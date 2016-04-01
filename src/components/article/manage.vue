@@ -1,5 +1,6 @@
 <template>
+	<!-- Main content -->
 	<section class="content">
-		Dashboard
+		管理文章
 	</div>
 </template>

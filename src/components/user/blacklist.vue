@@ -1,5 +1,5 @@
 <template>
 	<section class="content">
-		Dashboard
+		会员黑名单管理
 	</div>
 </template>

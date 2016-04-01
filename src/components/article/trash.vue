@@ -1,5 +1,6 @@
 <template>
+	<!-- Main content -->
 	<section class="content">
-		Dashboard
+		回收站
 	</div>
 </template>
