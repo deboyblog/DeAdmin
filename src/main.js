@@ -1,7 +1,9 @@
 import Vue from 'vue'
 import Router from 'vue-router'
 import App from './App.vue'
+import VueResource from 'vue-resource'
 Vue.use(Router)
+Vue.use(VueResource)
 
 var router = new Router({ linkActiveClass: 'active', history: false })
 
@@ -37,6 +39,20 @@ router.map({
       },
       'trash': {
         component: require('./components/article/trash.vue')
+      }
+    }
+  },
+  '/account': {
+    component: require('./components/Account.vue'),
+    subRoutes: {
+      'login': {
+        component: require('./components/account/login.vue')
+      },
+      'register': {
+        component: require('./components/account/register.vue')
+      },
+      'findpwd': {
+        component: require('./components/account/findpwd.vue')
       }
     }
   }

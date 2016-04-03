@@ -29,7 +29,7 @@ export default {
   data () {
     return {
       // 从文件中读取路由对应配置 一条路由对应一条配置
-      list: require('../../../static/content.header.config.js')
+      list: require('../../../static/config/content.header.config.js')
     }
   },
   computed: {

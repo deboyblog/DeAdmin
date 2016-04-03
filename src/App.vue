@@ -26,16 +26,6 @@ export default {
     appFooter,
     appAside,
     contentHeader
-  },
-  data () {
-    return {
-      info: require('../static/content.header.config.js')
-    }
-  },
-  route: {
-    data (to) {
-      console.log(to)
-    }
   }
 }
 </script>

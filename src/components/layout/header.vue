@@ -18,35 +18,6 @@
       <!-- Navbar Right Menu -->
       <div class="navbar-custom-menu">
         <ul class="nav navbar-nav">
-          <!-- Messages: style can be found in dropdown.less-->
-          <li class="dropdown messages-menu">
-            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-              <i class="fa fa-envelope-o"></i>
-              <span class="label label-success">4</span>
-            </a>
-            <ul class="dropdown-menu">
-              <li class="header">你有4条未读消息</li>
-              <li>
-                <!-- inner menu: contains the actual data -->
-                <div class="slimScrollDiv" style="position: relative; overflow: hidden; width: auto; height: 200px;"><ul class="menu" style="overflow: hidden; width: 100%; height: 200px;">
-                  <li><!-- start message -->
-                    <a href="#">
-                      <div class="pull-left">
-                        <img src="../../assets/user2-160x160.jpg" class="img-circle" alt="User Image">
-                      </div>
-                      <h4>
-                        技术支持
-                        <small><i class="fa fa-clock-o"></i> 5 分钟前</small>
-                      </h4>
-                      <p>或许你应该尝试下使用DA操作面板</p>
-                    </a>
-                  </li>
-                  <!-- end message -->
-                </ul><div class="slimScrollBar" style="width: 3px; position: absolute; top: 0px; opacity: 0.4; display: block; border-radius: 7px; z-index: 99; right: 1px; background: rgb(0, 0, 0);"></div><div class="slimScrollRail" style="width: 3px; height: 100%; position: absolute; top: 0px; display: none; border-radius: 7px; opacity: 0.2; z-index: 90; right: 1px; background: rgb(51, 51, 51);"></div></div>
-              </li>
-              <li class="footer"><a href="#">查看所有消息</a></li>
-            </ul>
-          </li>
           <!-- Notifications: style can be found in dropdown.less -->
           <li class="dropdown notifications-menu">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown">
@@ -122,7 +93,7 @@
                   <a href="#" class="btn btn-default btn-flat">个人主页</a>
                 </div>
                 <div class="pull-right">
-                  <a href="#" class="btn btn-default btn-flat">注销登录</a>
+                  <a href="#" v-link="{path:'/account/login'}" class="btn btn-default btn-flat">注销登录</a>
                 </div>
               </li>
             </ul>

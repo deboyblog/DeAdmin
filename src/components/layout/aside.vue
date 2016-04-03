@@ -46,7 +46,7 @@ export default {
   data () {
     return {
       menuFilter: '',
-      list: require('../../../static/aside.config.js')
+      list: require('../../../static/config/aside.config.js')
     }
   }
 }
