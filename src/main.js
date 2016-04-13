@@ -2,6 +2,7 @@ import Vue from 'vue'
 import Router from 'vue-router'
 import App from './App.vue'
 import VueResource from 'vue-resource'
+
 Vue.use(Router)
 Vue.use(VueResource)
 
